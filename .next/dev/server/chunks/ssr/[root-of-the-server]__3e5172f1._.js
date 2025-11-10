@@ -40,7 +40,7 @@ function Header() {
                         src: "/img/logo.png",
                         alt: "Orbit Logo",
                         width: 190,
-                        height: 48,
+                        height: 190,
                         priority: true
                     }, void 0, false, {
                         fileName: "[project]/orbit-engineering-service/app/components/Header.tsx",

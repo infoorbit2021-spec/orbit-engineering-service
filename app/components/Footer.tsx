@@ -8,8 +8,8 @@ export default function Footer() {
           <Image 
                       src="/img/logo.png" 
                       alt="Orbit Logo" 
-                      width={150} 
-                      height={48} 
+                      width={190} 
+                      height={190} 
                       priority 
                     />
           <p className="text-slate-400 text-sm">Leading provider of engineering & infrastructure consultancy services.</p>
