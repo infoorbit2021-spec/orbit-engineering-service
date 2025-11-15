@@ -109,9 +109,8 @@ const overlayColors = [
 
         {/* DYNAMIC SUBSECTIONS */}
         {sections.map((s, i) => {
-  const isParallax = String(s.parallax || s.Parallax || '').toLowerCase() === 'true' 
-                  || String(s.parallax || s.Parallax || '').toLowerCase() === 'yes' 
-                  || String(s.parallax || s.Parallax || '').trim() === '1';
+  const isParallax = ['true', 'yes', '1'].includes(String(s.parallax).toLowerCase());
+
  const overlayColor = overlayColors[i % overlayColors.length];
   return (
   
