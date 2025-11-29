@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function ClientsSlider({ clients }: { clients: string[] }) {
   return (
     <section className="py-20 bg-white text-center overflow-hidden">
-      <div className="container mx-auto px-6">
+      <div className=" mx-auto px-6">
         <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
           Trusted by Industry Leaders
         </h2>

@@ -2,18 +2,20 @@ import { generateNextSeo } from 'next-seo/pages'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
-import Stats from './components/Stats'
+import Stats, { StatItem } from './components/Stats'
 import Services from './components/FeatureSection'
 import Projects from './components/ProjectSection'
 import GetInTouch from './components/GetInTouch'
 import About from './components/About'
 import Clients from './components/Clients'
 import { getSheetData } from './lib/fetchGoogleSheet'
+import Reveal from './components/Reveal'
 
 export const revalidate = 600
 
 export default async function HomePage() {
   const rows = await getSheetData('Home')
+  const statsData = await getSheetData<StatItem>('Stats')
   
   const seo = rows.find((r: any) => r.Section === 'SEO') || {}
 
@@ -33,26 +35,42 @@ export default async function HomePage() {
       </head>
       <body className="min-h-screen bg-white text-slate-800">
         <Header />
-        <main>
-          <div className='bg-gradient-to-br from-sky-50 to-teal-50 pb-16'>
-          <Hero />
-          </div>
-          <Stats pathname="/"/>
-           <section className=" ps-4 grid lg:grid-cols-[2fr_1fr] gap-12 items-stretch me-0">
-              <div>
-                
-                <Services />
+          <main>
+            <Reveal>
+              <div className='bg-gradient-to-br from-sky-50 to-teal-50 pb-16'>
+                <Hero />
               </div>
+            </Reveal>
 
-              <div className='pt-10'>
-              
-                <GetInTouch />
-              </div>
-            </section>
-          <Projects />
-          <About />
-          <Clients />
-        </main>
+            <Reveal>
+              <Stats data={statsData} pathname="/" />
+
+            </Reveal>
+
+            <Reveal>
+              <section className="ps-4 grid lg:grid-cols-[2fr_1fr] gap-12 items-stretch me-0">
+                <div>
+                  <Services />
+                </div>
+                <div className='pt-10'>
+                  <GetInTouch />
+                </div>
+              </section>
+            </Reveal>
+
+            <Reveal>
+              <Projects />
+            </Reveal>
+
+            <Reveal>
+              <About />
+            </Reveal>
+
+            <Reveal>
+              <Clients />
+            </Reveal>
+          </main>
+
         <Footer />
       </body>
     </html>

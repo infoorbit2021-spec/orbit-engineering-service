@@ -7,6 +7,7 @@ import Footer from "../components/Footer"
 export const revalidate = 600; // ISR - revalidate every 10 mins
 
 export default async function ProjectsPage() {
+  const statsData = await getSheetData('Stats')
   // ✅ Fetch Google Sheet Data directly on the server
   const [heroRows, homeRows, projectRows] = await Promise.all([
     getSheetData("Hero"),
@@ -48,7 +49,8 @@ export default async function ProjectsPage() {
 
       {/* STATS SECTION */}
       <div>
-        <Stats pathname="/projects"/>
+         <Stats data={statsData} pathname="/projects" />
+        
       </div>
       {/* FILTERS */}
       <section className=" mx-auto px-4 py-10">

@@ -6,7 +6,7 @@ export default function Clients() {
 
   return (
     <section className="py-20 bg-gradient-to-br from-sky-50 text-center overflow-hidden">
-      <div className="container mx-auto px-6">
+      <div className=" mx-auto px-6">
         <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
           Trusted by Industry Leaders
         </h2>

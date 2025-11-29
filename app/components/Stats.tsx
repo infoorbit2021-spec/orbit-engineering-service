@@ -1,25 +1,63 @@
-// components/Stats.tsx
-import { getSheetData } from '../lib/fetchGoogleSheet'
+'use client'
+import { useEffect, useState } from "react";
 
-export default async function Stats({ pathname }: { pathname: string }) {
-  const data = await getSheetData('Stats')
+export type StatItem = {
+  Label: string;
+  Count: string | number;
+};
 
-  
+export default function Stats({ data, pathname }: { data: StatItem[], pathname: string }) {
 
-  // Apply style only if route is /projects
   const applyLiftStyle = pathname === "/projects";
 
-  // data expected as array of objects: { Label: 'Projects Completed', Count: '500+' }
   return (
-    <section className="bg-gradient-to-br from-sky-50 to-teal-50 pb-16">
-      <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
-        {data.map((stat: any, i: number) => (
-          <div key={i} className={`bg-white p-6 rounded-lg shadow text-center ${applyLiftStyle ? "-mt-16 relative z-[9]" : ""}`}>
-            <div className="text-4xl font-bold text-blue-600">{stat.Count}</div>
+    <section className="bg-white pb-16">
+      <div className="mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
+        {data.map((stat, i) => (
+          <div
+            key={i}
+            className={`bg-white p-6 rounded-lg shadow text-center ${
+              applyLiftStyle ? "-mt-16 relative z-[9]" : ""
+            }`}
+          >
+            <div className="text-4xl font-bold text-blue-600">
+              <AnimatedNumber value={stat.Count} />
+            </div>
             <div className="text-sm text-slate-600 mt-2">{stat.Label}</div>
           </div>
         ))}
       </div>
     </section>
   );
+}
+
+
+// 🔥 Embedded Animated Number Logic
+function AnimatedNumber({ value, duration = 1500 }: { value: string | number, duration?: number }) {
+  const [count, setCount] = useState(0);
+
+  // Extract digits only (handles 500+, 2,000, 90%)
+  const numericValue = Number(String(value).replace(/\D/g, ""));
+
+  useEffect(() => {
+    let start = 0;
+    const increment = numericValue / (duration / 16); // ~60fps
+
+    const interval = setInterval(() => {
+      start += increment;
+      if (start >= numericValue) {
+        clearInterval(interval);
+        setCount(numericValue);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, 16);
+
+    return () => clearInterval(interval);
+  }, [numericValue, duration]);
+
+  // Add back suffixes like "+" or "%"
+  const suffix = String(value).replace(/[0-9,]/g, "");
+
+  return <span>{count.toLocaleString()}{suffix}</span>;
 }

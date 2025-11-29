@@ -60,8 +60,8 @@ export default function Services() {
   const [active, setActive] = useState(0);
 
   return (
-    // <section className="py-20 bg-gradient-to-br from-sky-50 to-teal-50" id="services">
-    //   <div className="container mx-auto px-4">
+    // <section className="py-20 bg-white" id="services">
+    //   <div className=" mx-auto px-4">
         
     //     {/* Heading */}
     //     <div className="text-center mb-12">
@@ -96,8 +96,8 @@ export default function Services() {
     //     </div>
     //   </div>
     // </section>
-     <section className="py-20 bg-gradient-to-br from-sky-50 to-teal-50" id="services">
-      <div className="container mx-auto px-4">
+     <section className="py-20 bg-white" id="services">
+      <div className=" mx-auto px-4">
 
         {/* Heading */}
         <div className="text-center mb-12">

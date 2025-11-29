@@ -7,6 +7,7 @@ import Services from '../components/FeatureSection';
 import Projects from '../components/ProjectSection';
 import ManagementTeam from '../components/ManagementTeam';
 import ParallaxSections from '../components/ParallaxSections';
+import Reveal from '../components/Reveal';
 
 export const revalidate = 600;
 
@@ -170,17 +171,17 @@ export default async function AboutPage() {
             </section>
           );
         })} */}
-
+<Reveal>
         <ParallaxSections
   sections={sections}
   about={about}
   overlayColors={overlayColors}
-/>
+/></Reveal>
 
         {/* UNCHANGED SECTIONS */}
-        <ManagementTeam data={managementData} />
-        <Projects />
-        <Services />
+       <Reveal> <ManagementTeam data={managementData} /></Reveal>
+        <Reveal><Projects /></Reveal>
+        <Reveal><Services /></Reveal>
       </main>
 
       <Footer />

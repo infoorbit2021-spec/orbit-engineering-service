@@ -1,10 +1,10 @@
 export default function GetInTouch() {
   return (
     <section id="contact" className="py-8 bg-white-100">
-      <div className="container mx-auto px-6">
+      <div className=" mx-auto px-6">
         <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
-        <div className="bg-gradient-to-br from-sky-50 to-teal-50 rounded-xl shadow-lg p-8">
-          <form className="flex flex-col gap-6">
+        <div className="bg-white rounded-xl shadow-lg p-3 px-8">
+          <form className="flex flex-col gap-3">
             <div>
               <label htmlFor="name" className="block text-slate-700 font-medium mb-1">Your Name</label>
               <input id="name" type="text" className="w-full border border-gray-300 rounded-lg p-3 bg-white" placeholder="John Doe" required />
@@ -19,7 +19,7 @@ export default function GetInTouch() {
             </div>
             <div className="md:col-span-2">
               <label htmlFor="message" className="block text-slate-700 font-medium mb-1">Message</label>
-              <textarea id="message" rows={4} className="w-full border border-gray-300 rounded-lg p-3 bg-white" placeholder="Describe your project..." required></textarea>
+              <textarea id="message" rows={1} className="w-full border border-gray-300 rounded-lg p-3 bg-white" placeholder="Describe your project..." required></textarea>
             </div>
             <div className="md:col-span-2">
               <button type="submit" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 mb-3">

@@ -3,6 +3,7 @@ import { getSheetData } from '../lib/fetchGoogleSheet';
 import { generateNextSeo } from 'next-seo/pages';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Reveal from '../components/Reveal';
 
 export const revalidate = 600;
 
@@ -83,7 +84,7 @@ export default async function CareersPage() {
       </section>
       <main className=" mx-auto ">
      
-
+<Reveal>
         {/* ===== Careers Section ===== */}
         <section id="careers" className=" py-6 px-8 shadow-md">
           <h2 className="text-3xl font-bold text-center mb-4 gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
@@ -133,6 +134,7 @@ export default async function CareersPage() {
             )}
           </div>
         </section>
+        </Reveal>
       </main>
       <Footer />
     </>

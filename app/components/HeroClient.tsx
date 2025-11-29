@@ -46,7 +46,7 @@ export default function HeroClient({ slides }: { slides: any[] }) {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-10 container mx-auto px-4">
+      <div className="relative z-10 ms-5 px-4">
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full text-sm">
             ⭐ Excellence in Engineering
@@ -71,7 +71,7 @@ export default function HeroClient({ slides }: { slides: any[] }) {
           </div> */}
         </div>
       </div>
- <div className="absolute z-30 bottom-20 flex justify-center w-full gap-5">
+ <div className="absolute z-30 bottom-20 flex justify-start w-full gap-6 ms-10">
         <a
           href="/projects"
           className="pointer-events-auto px-8 py-4 bg-white/15 border border-white/30 backdrop-blur-md hover:bg-white/25 transition-all rounded-xl shadow-lg text-white font-semibold"

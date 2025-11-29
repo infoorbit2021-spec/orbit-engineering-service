@@ -1,10 +1,10 @@
-// lib/fetchGoogleSheet.ts
 'use server';
 import { google } from 'googleapis';
 
-export async function getSheetData(sheetName: string) {
+export async function getSheetData<T = any>(sheetName: string): Promise<T[]> {
   const apiKey = process.env.GOOGLE_API_KEY;
   const spreadsheetId = process.env.GOOGLE_SHEET_ID;
+
   if (!apiKey || !spreadsheetId) {
     console.warn('Missing GOOGLE_API_KEY or GOOGLE_SHEET_ID');
     return [];
@@ -21,12 +21,12 @@ export async function getSheetData(sheetName: string) {
   if (!rows || rows.length === 0) return [];
 
   const headers = rows[0];
+
   return rows.slice(1).map((row) => {
     const obj: Record<string, string> = {};
     headers.forEach((h, i) => {
       obj[h as string] = row[i] ?? '';
     });
-    console.log(JSON.stringify(obj));
-    return obj;
+    return obj as T;
   });
 }

@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { getSheetData } from "../lib/fetchGoogleSheet";
 import { useState, useEffect } from "react";
+import Reveal from "../components/Reveal";
 
 type Location = {
   name: string;
@@ -152,13 +153,17 @@ export default function ContactSection() {
         </div>
       </section>
       {/* Office Locations Section */}
+      
       <div className="max-w-7xl mx-auto px-6 py-16">
+        <Reveal>
         <div className="mb-12">
           <h2 className="text-3xl mb-3 text-slate-900">Our Offices</h2>
           <p className="text-slate-600">
             Select an office to view location details and contact information
           </p>
         </div>
+        </Reveal>
+        <Reveal>
         {/* Office Pills Navigation */}
         {locations.length > 0 && (
           <div className="flex flex-wrap gap-3 mb-8">
@@ -186,7 +191,8 @@ export default function ContactSection() {
             ))}
           </div>
         )}
-
+</Reveal>
+<Reveal>
         {/* Selected Office Details */}
         {selectedOffice && (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
@@ -293,7 +299,8 @@ export default function ContactSection() {
             </div>
           </div>
         )}
-
+        </Reveal>
+<Reveal>
         {/* Contact Form Section */}
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 lg:p-12">
           <div className="max-w-3xl mx-auto">
@@ -444,6 +451,7 @@ export default function ContactSection() {
             </form>
           </div>
         </div>
+        </Reveal>
       </div>
 
       <Footer />

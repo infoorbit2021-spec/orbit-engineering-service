@@ -15,7 +15,7 @@ export default async function ProjectDetail({ slug }: { slug: string }) {
     return (
       <>
         <Header />
-        <main className="container mx-auto px-4 py-20 text-center text-slate-600">
+        <main className=" mx-auto px-4 py-20 text-center text-slate-600">
           <h1 className="text-3xl font-semibold mb-4">Project not found</h1>
           <p>No details found for slug: <strong>{slug}</strong></p>
         </main>
@@ -68,7 +68,7 @@ export default async function ProjectDetail({ slug }: { slug: string }) {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/85 via-slate-900/30 to-transparent" />
-        <div className="container mx-auto relative z-10 px-6">
+        <div className=" mx-auto relative z-10 px-6">
           <div className="flex items-start gap-6">
             <div className="flex-1">
               <div className="flex gap-3 items-center mb-4">
@@ -98,7 +98,7 @@ export default async function ProjectDetail({ slug }: { slug: string }) {
       </section>
 
       {/* MAIN */}
-      <section className="container mx-auto px-6 py-12 grid lg:grid-cols-[2fr_1fr] gap-12">
+      <section className=" mx-auto px-6 py-12 grid lg:grid-cols-[2fr_1fr] gap-12">
         <div>
           {/* Overview */}
           <h2 className="text-2xl font-semibold mb-3">Project Overview</h2>
@@ -173,7 +173,7 @@ export default async function ProjectDetail({ slug }: { slug: string }) {
           {outcomes.length > 0 && (
             <>
               <h3 className="text-xl font-semibold mb-4">Project Outcomes</h3>
-              <div className="bg-gradient-to-br from-sky-50 to-teal-50 text-black p-8 rounded mb-8">
+              <div className="bg-white text-black p-8 rounded mb-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {outcomes.map((o: string, i: number) => (
                     <div key={i} className="text-sm">
