@@ -15,18 +15,18 @@ export default function GetInTouch() {
             </div>
             <div>
               <label htmlFor="phone" className="block text-slate-700 font-medium mb-1">Phone</label>
-              <input id="phone" type="tel" className="w-full border border-gray-300 rounded-lg p-3v bg-white" placeholder="+1 (555) 000-0000" required />
+              <input id="phone" type="tel" className="w-full border border-gray-300 rounded-lg p-3 bg-white" placeholder="+1 (555) 000-0000" required />
             </div>
             <div className="md:col-span-2">
               <label htmlFor="message" className="block text-slate-700 font-medium mb-1">Message</label>
-              <textarea id="message" rows={1} className="w-full border border-gray-300 rounded-lg p-3 bg-white" placeholder="Describe your project..." required></textarea>
+              <textarea id="message" rows={3} className="w-full border border-gray-300 rounded-lg p-3 bg-white" placeholder="Describe your project..." required></textarea>
             </div>
             <div className="md:col-span-2">
               <button type="submit" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 mb-3">
                 Send Message
-                <svg width="16" height="16" stroke="currentColor" strokeWidth="2">
+                {/* <svg width="16" height="16" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
+                </svg> */}
               </button>
             </div>
           </form>

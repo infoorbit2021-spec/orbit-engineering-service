@@ -10,6 +10,7 @@ import About from './components/About'
 import Clients from './components/Clients'
 import { getSheetData } from './lib/fetchGoogleSheet'
 import Reveal from './components/Reveal'
+import { Rows } from 'lucide-react'
 
 export const revalidate = 600
 
@@ -18,6 +19,11 @@ export default async function HomePage() {
   const statsData = await getSheetData<StatItem>('Stats')
   
   const seo = rows.find((r: any) => r.Section === 'SEO') || {}
+  const projectLimitRow = rows.find((r: any) => r.Section === "Projects")
+const projectLimit = parseInt(projectLimitRow?.Value || "0", 10)
+  const serviceRow = rows.find((r: any) => r.Section === 'services')
+
+
 
   return (
     <html lang="en">
@@ -36,21 +42,23 @@ export default async function HomePage() {
       <body className="min-h-screen bg-white text-slate-800">
         <Header />
           <main>
+            <div className='relative'>
             <Reveal>
-              <div className='bg-gradient-to-br from-sky-50 to-teal-50 pb-16'>
+            
                 <Hero />
-              </div>
+              
             </Reveal>
 
             <Reveal>
+              <div className='absolute -bottom-[20%] w-full bg-transparent'>
               <Stats data={statsData} pathname="/" />
-
+</div>
             </Reveal>
-
+</div>
             <Reveal>
-              <section className="ps-4 grid lg:grid-cols-[2fr_1fr] gap-12 items-stretch me-0 px-5">
+              <section className="ps-4 grid lg:grid-cols-[2fr_1fr] gap-12 items-stretch me-0">
                 <div>
-                  <Services />
+                  <Services  limit={4}/>
                 </div>
                 <div className='pt-10'>
                   <GetInTouch />
@@ -59,7 +67,7 @@ export default async function HomePage() {
             </Reveal>
 
             <Reveal>
-              <Projects />
+              <Projects limit={3}/>
             </Reveal>
 
             <Reveal>

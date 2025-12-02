@@ -2,7 +2,8 @@ import Link from "next/link";
 import { getSheetData } from "../lib/fetchGoogleSheet";
 import Stats from "../components/Stats";
 import  Header  from "../components/Header";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
+import ProjectsFilter from "../components/ProjectsFilter";
 
 export const revalidate = 600; // ISR - revalidate every 10 mins
 
@@ -12,7 +13,7 @@ export default async function ProjectsPage() {
   const [heroRows, homeRows, projectRows] = await Promise.all([
     getSheetData("Hero"),
     getSheetData("Home"),
-    getSheetData("ProjectList"),
+    getSheetData("ProjectDetail"),
   ]);
 
   // ✅ Hero Section
@@ -53,8 +54,8 @@ export default async function ProjectsPage() {
         
       </div>
       {/* FILTERS */}
-      <section className=" mx-auto px-4 py-10">
-        <div className="bg-white rounded-xl p-6 shadow mb-6">
+      <section className="px-4 py-10">
+       {/*  <div className="bg-white rounded-xl p-6 shadow mb-6">
           <div className="flex flex-wrap gap-6 justify-between items-start md:items-center">
             <div>
               <h3 className="font-semibold text-slate-700 mb-2">Category</h3>
@@ -88,10 +89,10 @@ export default async function ProjectsPage() {
 
         <p className="text-sm text-slate-600 mb-4">
           Showing {projectRows.length} project{projectRows.length !== 1 && "s"}
-        </p>
+        </p> */}
 
         {/* PROJECT GRID */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projectRows.map((project: any) => {
             console.log("Project Row →", project);
             const tags = (project.Tags || "").split(",").filter(Boolean);
@@ -106,7 +107,7 @@ export default async function ProjectsPage() {
               >
                 <div className="relative h-44">
                   <img
-                    src={`/img/${project.Image}`}
+                    src={`/img/${project.HeroImage}`}
                     alt={project.Title}
                     className="w-full h-full object-cover" />
                   {project.Status && (
@@ -154,7 +155,9 @@ export default async function ProjectsPage() {
               </article>
             );
           })}
-        </div>
+        </div> */}
+        <ProjectsFilter projectRows={projectRows} />
+
       </section>
     </main>
     <Footer /></>

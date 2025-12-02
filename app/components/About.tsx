@@ -11,9 +11,9 @@ export default async function About() {
     }
   });
   return (
-    <section id="about" className="py-20 bg-white px-5">
-      <div className=" mx-auto px-6 grid md:grid-cols-2 gap-12 items-center   mx-auto max-w-5xl">
-        <div className=' rtelative mx-auto max-w-5xl'>
+    <section id="about" className="py-20 bg-grey px-5">
+      <div className=" mx-auto px-6 grid md:grid-cols-2 gap-12 items-center   ">
+        <div className=' rtelative '>
           <h2 className="text-3xl font-bold mb-4">{aboutData.title}</h2>
           <p className="text-slate-600 mb-4">
             {aboutData.description}

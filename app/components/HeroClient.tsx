@@ -26,7 +26,7 @@ export default function HeroClient({ slides }: { slides: any[] }) {
   const slide = slides[index];
 
   return (
-    <section className="relative text-white overflow-hidden bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 h-[80vh] flex items-center">
+    <section className="relative text-white overflow-hidden bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 h-[80vh] flex items-start pt-20">
       <AnimatePresence mode="wait">
         <motion.div
           key={slide.SlideNo}
@@ -71,7 +71,7 @@ export default function HeroClient({ slides }: { slides: any[] }) {
           </div> */}
         </div>
       </div>
- <div className="absolute z-30 bottom-20 flex justify-start w-full gap-6 ms-10">
+ <div className="absolute z-30 top-70 flex justify-start w-full gap-6 ms-10">
         <a
           href="/projects"
           className="pointer-events-auto px-8 py-4 bg-white/15 border border-white/30 backdrop-blur-md hover:bg-white/25 transition-all rounded-xl shadow-lg text-white font-semibold"
@@ -86,7 +86,7 @@ export default function HeroClient({ slides }: { slides: any[] }) {
         </a>
       </div>  
       {/* Dots */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3">
+      <div className="absolute left-1/2 transform -translate-x-1/2 flex gap-3" style={{bottom:"30%"}}>
         {slides.map((_: any, i: number) => (
           <button
             key={i}
