@@ -10,10 +10,17 @@ export default async function FeatureCard({ feature }: { feature: any }) {
   const featureDetail = featureDetails.find(
     (item: any) => item.Slug === feature.Slug
   );
+ 
 
   return (
-    <div className="p-6 rounded-lg shadow bg-gradient-to-br from-sky-50 to-white hover:shadow-lg transition">
-      <h3 className="text-xl font-semibold mb-2">{feature.Title}</h3>
+    <div className={`p-6 rounded-lg shadow [${feature.background}] hover:shadow-lg transition`}>
+      <h3 className=" flex text-xl font-semibold mb-2"> 
+        <div
+  dangerouslySetInnerHTML={{ __html: feature
+    .Icons }}
+  className="w-10 h-10 me-6"
+></div>
+{feature.Title}</h3>
       <p className="text-slate-600 mb-4">
         {feature.ShortDescription ?? feature.Intro ?? feature.Description}
       </p>

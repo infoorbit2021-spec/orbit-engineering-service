@@ -85,7 +85,7 @@ export default async function AboutPage() {
       </section>
 
       {/* MAIN CONTENT */}
-      <main className=" mx-auto">
+      <main className=" ">
 
         {/* FIRST ABOUT SECTION → PARALLAX */}
         {/* <section
@@ -120,7 +120,7 @@ export default async function AboutPage() {
   {/* Overlay */}
   <div className="absolute inset-0 bg-white/85 backdrop-blur-sm"></div>
 
-  <div className="relative  mx-auto max-w-5xl">
+  <div className="relative">
     {/* Image floating left */}
     {about.Image && (
       <img
@@ -172,7 +172,7 @@ export default async function AboutPage() {
           );
 
         })} */}
-        <div className="relative  mx-auto max-w-5xl">
+        <div className="relative ">
 <Reveal>
         <ParallaxSections
   sections={sections}
@@ -182,8 +182,8 @@ export default async function AboutPage() {
 </div>
         {/* UNCHANGED SECTIONS */}
        <Reveal> <ManagementTeam data={managementData} /></Reveal>
-        <Reveal><Projects /></Reveal>
-        <Reveal><Services /></Reveal>
+        <Reveal><Projects limit={3}/></Reveal>
+        <Reveal><Services limit={2}/></Reveal>
        
       </main>
 

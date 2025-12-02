@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 export type StatItem = {
   Label: string;
   Count: string | number;
+  Icons:string;
 };
 
 export default function Stats({ data, pathname }: { data: StatItem[], pathname: string }) {
@@ -16,11 +17,16 @@ export default function Stats({ data, pathname }: { data: StatItem[], pathname: 
         {data.map((stat, i) => (
           <div
             key={i}
-            className={`bg-white p-6 rounded-lg shadow text-center ${
+            className={`bg-gradient-to-r from-[#d9e9ff] to-[#ed81ff] p-6 rounded-lg shadow text-center ${
               applyLiftStyle ? "-mt-16 relative z-[9]" : ""
             }`}
           >
-            <div className="text-4xl font-bold text-blue-600">
+            <div className="flex text-4xl font-bold text-blue-600">
+              <div
+  dangerouslySetInnerHTML={{ __html: stat.Icons }}
+  className="w-10 h-10 me-8"
+></div>
+           
               <AnimatedNumber value={stat.Count} />
             </div>
             <div className="text-sm text-slate-600 mt-2">{stat.Label}</div>

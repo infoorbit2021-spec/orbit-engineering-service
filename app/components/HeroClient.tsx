@@ -86,7 +86,7 @@ export default function HeroClient({ slides }: { slides: any[] }) {
         </a>
       </div>  
       {/* Dots */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 flex gap-3" style={{bottom:"30%"}}>
+      <div className="absolute left-1/2 transform -translate-x-1/2 flex gap-3" style={{bottom:"15%"}}>
         {slides.map((_: any, i: number) => (
           <button
             key={i}
