@@ -17,7 +17,7 @@ export default function Stats({ data, pathname }: { data: StatItem[], pathname: 
         {data.map((stat, i) => (
           <div
             key={i}
-            className={`bg-gradient-to-r from-[#d9e9ff] to-[#ed81ff] p-6 rounded-lg shadow text-center ${
+            className={`bg-gradient-to-r from-[#d9e9ff] to-[#19d5ed] p-6 rounded-lg shadow text-center ${
               applyLiftStyle ? "-mt-16 relative z-[9]" : ""
             }`}
           >
