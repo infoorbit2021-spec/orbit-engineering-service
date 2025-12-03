@@ -60,7 +60,7 @@ export default async function ProjectDetail({ slug }: { slug: string }) {
             </div>
 
             <h1 className="text-white text-4xl font-semibold">{project.Title}</h1>
-            <p className="text-slate-200 max-w-2xl">{project.Description}</p>
+            {/* <p className="text-slate-200 max-w-2xl">{project.Description}</p> */}
 
             <div className="mt-4 flex flex-wrap gap-6 text-sm text-slate-200">
               {project.Location && <span>📍 {project.Location}</span>}

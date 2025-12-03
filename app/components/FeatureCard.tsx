@@ -13,7 +13,7 @@ export default async function FeatureCard({ feature }: { feature: any }) {
  
 
   return (
-    <div className={`p-6 rounded-lg shadow [${feature.background}] hover:shadow-lg transition`}>
+    <div style={{ background: feature.background }} className=" p-6 rounded-lg shadow hover:shadow-lg transition">
       <h3 className=" flex text-xl font-semibold mb-2"> 
         <div
   dangerouslySetInnerHTML={{ __html: feature

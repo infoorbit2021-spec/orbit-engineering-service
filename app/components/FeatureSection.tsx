@@ -22,7 +22,7 @@ export default async function FeaturesPage({ limit = 0 }: { limit?: number }) {
         },
       })}
 
-      <main className="mx-auto max-w-5xl py-16 px-4">
+      <main className="mx-auto max-w-7xl py-16 px-4">
         <h1 className="text-4xl font-bold mb-8 px-6">Our Services</h1>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 gap-10 px-6">

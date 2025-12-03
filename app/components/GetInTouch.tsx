@@ -3,7 +3,7 @@ export default function GetInTouch() {
     <section id="contact" className="py-8 bg-white-100">
       <div className=" mx-auto px-6">
         <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
-        <div className="bg-white rounded-xl shadow-lg p-8">
+        <div className="bg-white rounded-xl shadow-lg p-4">
           <form className="flex flex-col gap-3">
             <div>
               <label htmlFor="name" className="block text-slate-700 font-medium mb-1">Your Name</label>

@@ -26,7 +26,8 @@ const items = parsedLimit > 0 ? data.slice(0, parsedLimit) : data
         },
       })}
 
-      <main className="py-16 px-5 bg-white">
+      <main className="py-16 px-5 bg-white ">
+        
         <h1 className="text-4xl font-bold mb-8 px-6">Our Projects</h1>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 px-6">
@@ -34,6 +35,7 @@ const items = parsedLimit > 0 ? data.slice(0, parsedLimit) : data
             <ProjectCard key={p.Slug} project={p} />
           ))}
         </div>
+      
       </main>
     </>
   )

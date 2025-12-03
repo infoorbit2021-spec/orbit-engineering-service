@@ -172,7 +172,7 @@ export default async function AboutPage() {
           );
 
         })} */}
-        <div className="relative ">
+        <div className="relative">
 <Reveal>
         <ParallaxSections
   sections={sections}
@@ -183,7 +183,7 @@ export default async function AboutPage() {
         {/* UNCHANGED SECTIONS */}
        <Reveal> <ManagementTeam data={managementData} /></Reveal>
         <Reveal><Projects limit={3}/></Reveal>
-        <Reveal><Services limit={2}/></Reveal>
+        <Reveal><Services limit={4}/></Reveal>
        
       </main>
 
