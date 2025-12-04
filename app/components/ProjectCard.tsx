@@ -10,7 +10,7 @@ export default function ProjectCard({ project }: any) {
       </div>
       <div className="p-4">
         <h3 className="text-lg font-semibold mb-1">{project.Title}</h3>
-        <p className="text-slate-600 text-sm mb-3">{project.ShortDescription ?? project.Description}</p>
+        <p className="text-slate-600 text-sm mb-3 ">{project.ShortDescription ?? project.Description}</p>
         <Link href={`/projects/${project.Slug}`} className="text-blue-600">
           View Details →
         </Link>
