@@ -114,13 +114,13 @@ export default async function AboutPage() {
         </section> */}
 
         <section
-  className="relative py-28 px-8 bg-fixed bg-center bg-cover text-slate-900"
+  className="relative py-10 px-6 bg-fixed bg-center bg-cover text-slate-900"
   style={{ backgroundImage: `url(/img/${about.Image})` }}
 >
   {/* Overlay */}
   <div className="absolute inset-0 bg-white/85 backdrop-blur-sm"></div>
 
-  <div className="relative">
+  <div className="relative mt-4">
     {/* Image floating left */}
     {about.Image && (
       <img

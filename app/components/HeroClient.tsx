@@ -26,7 +26,7 @@ export default function HeroClient({ slides }: { slides: any[] }) {
   const slide = slides[index];
 
   return (
-    <section className="relative text-white overflow-hidden bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 h-[80vh] flex items-start pt-20">
+    <section className="relative text-white overflow-hidden bg-gradient-to-br from-blue-500 via-indigo-500 to-slate-500 h-[80vh] flex items-start pt-20">
       <AnimatePresence mode="wait">
         <motion.div
           key={slide.SlideNo}
@@ -40,7 +40,7 @@ export default function HeroClient({ slides }: { slides: any[] }) {
             <img
               src={`/img/${slide.Image}`}
               alt={slide.Title}
-              className="w-full h-full object-cover opacity-30"
+              className="w-full h-full object-cover opacity-55"
             />
           )}
         </motion.div>
@@ -51,9 +51,10 @@ export default function HeroClient({ slides }: { slides: any[] }) {
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full text-sm">
             ⭐ Excellence in Engineering
           </div>
-          <h1 className="mt-6 text-4xl md:text-5xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-200">
+         <h1 className="mt-4 text-4xl md:text-4xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-200 block leading-tight">
             {slide.Title}
           </h1>
+
           <p className="mt-4 text-lg text-slate-200">{slide.Subtitle}</p>
           {/* <div className="mt-6 flex gap-4">
             <a

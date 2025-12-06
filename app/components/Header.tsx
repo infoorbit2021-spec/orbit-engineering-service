@@ -42,15 +42,15 @@ export default function Header() {
               href={item.href}
               className={`relative transition ${
                 pathname === item.href
-                  ? 'text-[#a500da] font-semibold'
-                  : 'hover:text-[#a500da]'
+                  ? 'text-[#8cccd4] font-semibold'
+                  : 'hover:text-[#8cccd4]'
               }`}
             >
               {item.name}
 
               {/* underline visible only when active */}
               {pathname === item.href && (
-                <span className="absolute bottom-[-6px] left-0 w-full h-[2px] bg-[#a500da] rounded-full"></span>
+                <span className="absolute bottom-[-6px] left-0 w-full h-[2px] bg-[#8cccd4] rounded-full"></span>
               )}
             </Link>
           ))}
@@ -75,8 +75,8 @@ export default function Header() {
               onClick={() => setOpen(false)}
               className={`block py-2 border-b last:border-none ${
                 pathname === item.href
-                  ? 'text-[#a500da] font-semibold'
-                  : 'hover:text-[#a500da]'
+                  ? 'text-[#8cccd4] font-semibold'
+                  : 'hover:text-[#8cccd4]'
               }`}
             >
               {item.name}

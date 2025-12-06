@@ -13,11 +13,12 @@ export default function Stats({ data, pathname }: { data: StatItem[], pathname: 
 
   return (
     <section className="bg-transparent px-5">
-      <div className="mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 w-[80%]">
         {data.map((stat, i) => (
           <div
             key={i}
-            className={`bg-gradient-to-r from-[#d9e9ff] to-[#19d5ed] p-6 rounded-lg shadow text-center ${
+            className={`bg-gradient-to-r from-white to-[#f1f5f9]
+p-6 rounded-lg shadow text-center ${
               applyLiftStyle ? "-mt-16 relative z-[9]" : ""
             }`}
           >

@@ -24,7 +24,7 @@ export default async function About() {
           <ul className="space-y-4">
             <li className="flex items-center gap-3">
               <span className="bg-blue-100 text-blue-600 p-2 rounded-full">
-                <svg width="20" height="20" stroke="currentColor" strokeWidth="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg>
+                <svg width="25" height="25" stroke="currentColor" strokeWidth="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg>
               </span>
               <span><strong>Quality Excellence</strong> — ISO certified processes</span>
             </li>

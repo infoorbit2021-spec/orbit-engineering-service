@@ -37,8 +37,8 @@ export default function Footer() {
 
         <div>
           <h4 className="font-semibold mb-3">Contact</h4>
-          <p className="text-slate-400 text-sm">info@orbit-eng.com</p>
-          <p className="text-slate-400 text-sm">+1 (555) 123-4567</p>
+          <p className="text-slate-400 text-sm">info@oespty.com</p>
+          <p className="text-slate-400 text-sm"> 0433-219-447</p>
         </div>
 
       </div>
