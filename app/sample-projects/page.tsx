@@ -33,17 +33,17 @@ export default async function SamplePage() {
       })}
       <Header></Header>
       {/* Hero Section */}
-{/* <section className="relative h-[200px] flex items-center overflow-hidden">
+<section className="relative h-[200px] flex items-center overflow-hidden">
         <img
-          src={`/img/${hero.Image}`}
+          src={`/img/GenesisCare1.png`}
           alt="Projects Hero"
           className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/40 to-transparent" />
         <div className=" mx-auto relative z-10 px-6">
-          <h1 className="text-white text-4xl font-semibold mb-2">{hero.Title}</h1>
-          <p className="text-slate-200 max-w-2xl">{hero.Subtitle}</p>
+          <h1 className="text-white text-4xl font-semibold mb-2">Sample Projects</h1>
+          {/* <p className="text-slate-200 max-w-2xl">{hero.Subtitle}</p> */}
         </div>
-      </section> */}
+      </section>
 
 <PdfViewer data={data}></PdfViewer>
 
