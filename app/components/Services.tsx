@@ -2,63 +2,12 @@
 
 import { useState } from "react";
 
-const tabs = [
-  {
-    title: "HVAC - BIM",
-    icon: "fas fa-info",
-    content: (
-      <>
-        <p>
-          <strong>Building Information Modelling (BIM)</strong> is a process that
-          begins with the creation of an intelligent 3D model. BIM is essential
-          for efficient planning, design, and execution.
-        </p>
-        <p className="mt-3">
-          HVAC BIM modelling improves planning, coordination, and delivers
-          clash-free designs helping prevent delays and cost overruns.
-        </p>
-      </>
-    ),
-  },
-  {
-    title: "HVAC - DRAFTING",
-    icon: "fas fa-drafting-compass",
-    content: (
-      <>
-        <p>
-          Drafting represents design intent and is critical to meaningful
-          project execution. With correct codes, standards, and precision,
-          drafting ensures seamless translation from design to reality.
-        </p>
-        <p className="mt-3">
-          Our skilled drafters help reduce duct waste by up to 10% through smart
-          layout strategy and value engineering.
-        </p>
-      </>
-    ),
-  },
-  {
-    title: "HVAC - COORDINATION",
-    icon: "far fa-handshake",
-    content: (
-      <>
-        <p>
-          HVAC coordination is crucial for successful completion of medium to
-          complex projects like hospitals, malls, and high-rise buildings.
-        </p>
-        <p className="mt-3">
-          Our team ensures heating, ventilation, and cooling systems work
-          synergistically with other trades, minimizing rework and maximizing
-          project efficiency.
-        </p>
-      </>
-    ),
-  },
-];
 
-export default function Services() {
+
+export default function Services({servicedata}:{servicedata:any[]}) {
   const [active, setActive] = useState(0);
-
+  const tabs = servicedata;
+  console.log("tabs --------------------------------- ",tabs);
   return (
     // <section className="py-20 bg-white" id="services">
     //   <div className=" mx-auto px-4">
@@ -100,12 +49,12 @@ export default function Services() {
       <div className=" mx-auto px-4">
 
         {/* Heading */}
-        <div className="text-center mb-12">
+        {/* <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">
-            {tabs[0]?.title || "Services Offered"}
+            {tabs.Title || "Services Offered"}
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
-        </div>
+        </div> */}
 
         {/* Layout Wrapper */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
@@ -125,14 +74,14 @@ export default function Services() {
                 `}
               >
                 {/* {tab.Icon && <i className={`${tab.Icon} text-lg`}></i>} */}
-                <span className="font-medium text-sm md:text-base">{tab.title}</span>
+                <span className="font-medium text-sm md:text-base">{tab.Title}</span>
               </button>
             ))}
           </div>
 
           {/* Right: Content */}
           <div className="md:col-span-3 bg-white p-8 rounded-xl shadow-lg leading-relaxed text-gray-700 animate-fadeIn">
-            {tabs[active].content}
+            {tabs[active].ShortDescription}
           </div>
 
         </div>

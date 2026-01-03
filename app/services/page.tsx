@@ -44,7 +44,7 @@ export default async function FeaturesPage() {
           <p className="text-slate-200 max-w-2xl">{hero.Subtitle}</p>
         </div>
       </section>
-<Services ></Services>
+<Services servicedata = {servicedata}></Services>
 
       {/* <main className=" mx-auto py-16 px-4">
        
