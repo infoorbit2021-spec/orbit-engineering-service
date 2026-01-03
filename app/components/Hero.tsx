@@ -5,7 +5,20 @@ export const revalidate = 600; // revalidate every 10 mins
 
 export default async function Hero() {
   // ✅ Fetch sheet data server-side
-  const slides = await getSheetData("Hero");
+  
+   const herodata = await getSheetData('Hero')
+
+  // ---- Hero Section ----
+ const slides = herodata
+  .filter((r: any) => r.Page === 'Home' && r.Object === 'HeroSlider')
+  .sort((a: any, b: any) => Number(a.ItemNo) - Number(b.ItemNo))
+  .map((r: any) => ({
+    ItemNo: Number(r.ItemNo),
+    Title: r.Title,
+    Subtitle: r.Subtitle,
+    CtaText: r.CtaText,
+    Image: r.Image,
+  }));
 
   console.log("slides.........................................",slides);
 

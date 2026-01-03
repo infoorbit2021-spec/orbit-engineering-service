@@ -5,7 +5,7 @@ import FeatureCard from './FeatureCard'
 export const revalidate = 600
 
 export default async function FeaturesPage({ limit = 0 }: { limit?: number }) {
-  const data = await getSheetData('FeatureList')
+  const data = await getSheetData('service')
 
   // If limit > 0 → slice, else show all
   const displayedData = limit > 0 ? data.slice(0, limit) : data

@@ -18,13 +18,14 @@ export default async function CareersPage() {
       .map((r: any) => [r.Field, r.Value])
   );
 
+ const herodata = await getSheetData('Hero')
+
   // ---- Hero Section ----
   const hero = Object.fromEntries(
-    rows
-      .filter((r: any) => r.Section === 'Hero')
+    herodata
+      .filter((r: any) => r.Page === 'Careers')
       .map((r: any) => [r.Field, r.Value])
   );
-
   // ---- Openings ----
   // Group rows by "Title" to combine description and highlights together
   const openings: {

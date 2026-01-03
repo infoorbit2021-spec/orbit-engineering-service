@@ -9,13 +9,14 @@ import Services from '../components/Services'
 export const revalidate = 600
 
 export default async function FeaturesPage() {
-  const data = await getSheetData('FeatureList')
+  // const data = await getSheetData('FeatureList')
   const servicedata = await getSheetData('service')
+  const herodata = await getSheetData('Hero')
 
   // ---- Hero Section ----
   const hero = Object.fromEntries(
-    servicedata
-      .filter((r: any) => r.Section === 'Hero')
+    herodata
+      .filter((r: any) => r.Page === 'service')
       .map((r: any) => [r.Field, r.Value])
   );
 

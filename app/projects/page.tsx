@@ -16,12 +16,15 @@ export default async function ProjectsPage() {
     getSheetData("ProjectDetail"),
   ]);
 
-  // ✅ Hero Section
-  const hero = heroRows?.[0] || {
-    Image: "hero3.jpg",
-    Subtitle: "Explore our engineering excellence through innovative projects.",
-  };
+ 
 
+  // ---- Hero Section ----
+  const hero = Object.fromEntries(
+    heroRows
+      .filter((r: any) => r.Page === 'projects')
+      .map((r: any) => [r.Field, r.Value])
+  );
+console.log("slides.........................................",hero);
   // ✅ Stats Section
   const s = homeRows.filter((r: any) => r.Section === "Stat");
   const stats: { Label: string; Count: string }[] = [];
@@ -43,7 +46,7 @@ export default async function ProjectsPage() {
           className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/40 to-transparent" />
         <div className=" mx-auto relative z-10 px-6">
-          <h1 className="text-white text-4xl font-semibold mb-2">Our Projects</h1>
+          <h1 className="text-white text-4xl font-semibold mb-2">{hero.Title}</h1>
           <p className="text-slate-200 max-w-2xl">{hero.Subtitle}</p>
         </div>
       </section>

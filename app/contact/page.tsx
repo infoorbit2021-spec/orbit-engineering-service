@@ -17,8 +17,13 @@ type Location = {
   timezone?: string;
   hours?: string;
 };
+type Hero = {
+  Title?: string;
+  Subtitle?: string;
+  Image?: string;
+};
 
-export default function ContactSection() {
+export default async function ContactSection() {
   const [locations, setLocations] = useState<Location[]>([]);
   const [selectedOffice, setSelectedOffice] = useState<Location | null>(null);
   const [formData, setFormData] = useState({
@@ -29,9 +34,20 @@ export default function ContactSection() {
     message: "",
     preferredOffice: "",
   });
+  const [hero, setHero] = useState<Hero | null>(null);
+
 
   useEffect(() => {
     async function loadData() {
+       const herodata = await getSheetData('Hero')
+
+  // ---- Hero Section ----
+  const hero = Object.fromEntries(
+    herodata
+      .filter((r: any) => r.Page === 'projects')
+      .map((r: any) => [r.Field, r.Value])
+  );
+  setHero(hero);
       const rows = await getSheetData("Locations");
 
       const filtered = rows
@@ -106,52 +122,19 @@ export default function ContactSection() {
   return (
     <>
       <Header />
-
-      {/* Hero Section */}
-      {/* <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          ></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl mb-6">Get in Touch</h1>
-            <p className="text-xl text-slate-300 mb-8">
-              Have a project in mind? We're here to help. Reach out to any of
-              our offices or send us a message below.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <div className="flex items-center gap-2 text-slate-300">
-                <Globe className="w-5 h-5" />
-                <span className="text-sm">{locations.length} Locations</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-300">
-                <Clock className="w-5 h-5" />
-                <span className="text-sm">24/7 Support Available</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-300">
-                <Mail className="w-5 h-5" />
-                <span className="text-sm">Response within 24 hours</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
+{hero && (
   <section className="relative h-[200px] flex items-center overflow-hidden">
         <img
-          src={`/img/contact_us_her_img.jpg`}
+          src={`/img/${hero.Image}`}
           alt="Projects Hero"
           className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/40 to-transparent" />
         <div className=" mx-auto relative z-10 px-6">
-          <h1 className="text-white text-4xl font-semibold mb-2">Contact Us</h1>
+          <h1 className="text-white text-4xl font-semibold mb-2">{hero.Title}</h1>
           {/* <p className="text-slate-200 max-w-2xl">{hero.Subtitle}</p> */}
         </div>
       </section>
+)}
       {/* Office Locations Section */}
       
       <div className="max-w-7xl mx-auto px-6 py-16">

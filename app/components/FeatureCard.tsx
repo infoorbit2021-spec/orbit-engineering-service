@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default async function FeatureCard({ feature }: { feature: any }) {
   // Fetch all feature details from Google Sheet
-  const featureDetails = await getSheetData("FeatureDetail");
+  const featureDetails = await getSheetData("service");
 
   // Match based on Slug
   const featureDetail = featureDetails.find(
