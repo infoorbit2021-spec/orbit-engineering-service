@@ -82,7 +82,7 @@ export default function PdfViewer({ data = [] }: { data?: FolderItem[] }) {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {!loading &&
                 pdfs.map((pdf) => {
-                  const url = `/pdfs/${activeFolder}/${pdf}`;
+                  const url = `/pdfs/${activeFolder}/${pdf}#toolbar=0`;
                   const isBroken = broken[pdf];
 
                   return (

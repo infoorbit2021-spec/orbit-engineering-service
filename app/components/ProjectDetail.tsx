@@ -79,7 +79,7 @@ export default async function ProjectDetail({ slug }: { slug: string }) {
         <div className="grid lg:grid-cols-[2fr_1fr] gap-12">
           <div>
             <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
-            <p className="text-slate-700 leading-relaxed mb-8">{project.Description}</p>
+             <div className="prose max-w-none whitespace-pre-wrap leading-relaxed">{project.Description}</div>
 
             {/* Meta Cards */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
@@ -88,13 +88,13 @@ export default async function ProjectDetail({ slug }: { slug: string }) {
                 <span>{project.Client}</span>
               </div>
               <div className="bg-slate-50 p-4 rounded border text-sm">
-                <strong className="block text-slate-600">Duration</strong>
-                <span>{project.Duration}</span>
+                <strong className="block text-slate-600">Mechanical Contractor</strong>
+                <span>{project.MechanicalContractor}</span>
               </div>
-              <div className="bg-slate-50 p-4 rounded border text-sm">
+              {/* <div className="bg-slate-50 p-4 rounded border text-sm">
                 <strong className="block text-slate-600">Size</strong>
                 <span>{project.Size}</span>
-              </div>
+              </div> */}
             </div>
 
             {/* Gallery */}
