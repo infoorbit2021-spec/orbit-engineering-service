@@ -1,6 +1,6 @@
 var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/projects/[slug]/page.js")
-R.c("server/chunks/ssr/8645e_d4c1c14b._.js")
-R.c("server/chunks/ssr/[root-of-the-server]__4e5dddf8._.js")
+R.c("server/chunks/ssr/8645e_861c6871._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__2687a24e._.js")
 R.c("server/chunks/ssr/8645e_78528a4f._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__e8a2741f._.js")
 R.c("server/chunks/ssr/orbit-engineering-service-1_app_2ea67f88._.js")

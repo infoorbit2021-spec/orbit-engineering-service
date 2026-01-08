@@ -16,18 +16,31 @@ export default function Clients() {
 
         {/* Slider Wrapper */}
         <div className="relative w-full overflow-hidden">
-         <motion.div
-            className="flex gap-10"
-            animate={{ rotate: [0, 360] }}
-            transition={{
-              repeat: Infinity,
-              ease: "linear",
-              duration: 15,
-            }}
-          >
+              <motion.div
+  className="flex gap-10 overflow-hidden whitespace-nowrap"
+  animate={{ x: ["0%", "-100%"] }}
+  transition={{
+    repeat: Infinity,
+    repeatType: "loop",
+    ease: "linear",
+    duration: 15,
+  }}
+>
 
             {/* Duplicate the list to create infinite scroll effect */}
             {[...clients, ...clients].map((logo, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 w-40 h-28 rounded-1xl flex items-center justify-center transition-all"
+              >
+                <img
+                  src={`/img/client/${logo}`}
+                  alt={logo.replace(".PNG", "")}
+                  className="h-14 object-contain transition"
+                />
+              </div>
+            ))}
+             {[...clients, ...clients].map((logo, i) => (
               <div
                 key={i}
                 className="flex-shrink-0 w-40 h-28 rounded-1xl flex items-center justify-center transition-all"

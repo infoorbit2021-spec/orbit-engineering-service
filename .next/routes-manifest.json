@@ -55,6 +55,18 @@
       "namedRegex": "^/about(?:/)?$"
     },
     {
+      "page": "/api/contact",
+      "regex": "^/api/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/contact(?:/)?$"
+    },
+    {
+      "page": "/api/pdfs",
+      "regex": "^/api/pdfs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/pdfs(?:/)?$"
+    },
+    {
       "page": "/careers",
       "regex": "^/careers(?:/)?$",
       "routeKeys": {},
@@ -77,6 +89,12 @@
       "regex": "^/projects(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/projects(?:/)?$"
+    },
+    {
+      "page": "/sample-projects",
+      "regex": "^/sample\\-projects(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/sample\\-projects(?:/)?$"
     },
     {
       "page": "/services",

@@ -10,7 +10,7 @@
         }
       },
       "layer": {
-        "app/contact/page": "rsc"
+        "app/contact/page": "action-browser"
       },
       "exportedName": "getSheetData",
       "filename": "orbit-engineering-service-1/app/lib/fetchGoogleSheet.ts"

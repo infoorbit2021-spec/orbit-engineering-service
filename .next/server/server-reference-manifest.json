@@ -1,6 +1,6 @@
 {
   "node": {
-    "4034e279466a190a2ea7aca8cd45aeba14e88050fb": {
+    "4058308c7eb5c9a4ce0fcf8090617a6b7d986cba85": {
       "workers": {
         "app/about/page": {
           "moduleId": 11498,
@@ -38,6 +38,12 @@
           "exportedName": "getSheetData",
           "filename": "orbit-engineering-service-1/app/lib/fetchGoogleSheet.ts"
         },
+        "app/sample-projects/page": {
+          "moduleId": 66546,
+          "async": false,
+          "exportedName": "getSheetData",
+          "filename": "orbit-engineering-service-1/app/lib/fetchGoogleSheet.ts"
+        },
         "app/services/page": {
           "moduleId": 41231,
           "async": false,
@@ -48,10 +54,11 @@
       "layer": {
         "app/about/page": "rsc",
         "app/careers/page": "rsc",
-        "app/contact/page": "rsc",
+        "app/contact/page": "action-browser",
         "app/page": "rsc",
         "app/projects/[slug]/page": "rsc",
         "app/projects/page": "rsc",
+        "app/sample-projects/page": "rsc",
         "app/services/page": "rsc"
       },
       "filename": "orbit-engineering-service-1/app/lib/fetchGoogleSheet.ts",
@@ -59,5 +66,5 @@
     }
   },
   "edge": {},
-  "encryptionKey": "r0PieKHIMzm69ckEwAUx0+09ERYPcjb9BNGzOFeJsZY="
+  "encryptionKey": "ZOZow6lXb0aAyoAj8gmZCpFw91Mr4CfSfA/qPpmj2Mk="
 }

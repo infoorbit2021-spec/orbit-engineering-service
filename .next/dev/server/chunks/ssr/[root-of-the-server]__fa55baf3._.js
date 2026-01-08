@@ -80,7 +80,6 @@ module.exports = mod;
 "[project]/orbit-engineering-service-1/app/lib/fetchGoogleSheet.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-// lib/fetchGoogleSheet.ts
 /* __next_internal_action_entry_do_not_use__ [{"403b0062715340a2a1adb6b9a0058963d0cc0799ff":"getSheetData"},"",""] */ __turbopack_context__.s([
     "getSheetData",
     ()=>getSheetData
@@ -113,7 +112,6 @@ async function getSheetData(sheetName) {
         headers.forEach((h, i)=>{
             obj[h] = row[i] ?? '';
         });
-        console.log(JSON.stringify(obj));
         return obj;
     });
 }
