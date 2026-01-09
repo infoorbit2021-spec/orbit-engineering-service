@@ -98,26 +98,28 @@ export default async function ProjectDetail({ slug }: { slug: string }) {
             </div>
 
             {/* Gallery */}
-            {gallery.length > 0 && (
+   {gallery.length > 0 && (
   <>
     <h3 className="text-xl font-semibold mb-4">Project Gallery</h3>
 
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
       {gallery.map((img: string, i: number) => (
         <div
           key={i}
-          className="w-full h-40 rounded bg-slate-50 flex items-center justify-center overflow-hidden"
+          className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-slate-200"
         >
           <img
             src={`/img/${img}`}
             alt={`${project.Title}-${i}`}
-            className="max-w-full max-h-full object-contain"
+            className="w-full h-full object-cover"
           />
         </div>
       ))}
     </div>
   </>
 )}
+
+
 
           </div>
 
