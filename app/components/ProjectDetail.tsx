@@ -99,20 +99,26 @@ export default async function ProjectDetail({ slug }: { slug: string }) {
 
             {/* Gallery */}
             {gallery.length > 0 && (
-              <>
-                <h3 className="text-xl font-semibold mb-4">Project Gallery</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-                  {gallery.map((img: string, i: number) => (
-                    <img
-                      key={i}
-                      src={`/img/${img}`}
-                      alt={`${project.Title}-${i}`}
-                      className="w-full h-40 object-cover rounded"
-                    />
-                  ))}
-                </div>
-              </>
-            )}
+  <>
+    <h3 className="text-xl font-semibold mb-4">Project Gallery</h3>
+
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+      {gallery.map((img: string, i: number) => (
+        <div
+          key={i}
+          className="w-full h-40 rounded bg-slate-50 flex items-center justify-center overflow-hidden"
+        >
+          <img
+            src={`/img/${img}`}
+            alt={`${project.Title}-${i}`}
+            className="max-w-full max-h-full object-contain"
+          />
+        </div>
+      ))}
+    </div>
+  </>
+)}
+
           </div>
 
           {/* Sidebar */}

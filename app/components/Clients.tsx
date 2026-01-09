@@ -14,10 +14,7 @@ export default function Clients() {
     "jec_airconditioning.jpg",
     "metalair_sheetmetal.png",
     "precise_air.png",
-    "protech.png",
-    "redstar.jpg",
-    "seda_services_logo.jpg",
-    "varium.png",
+     "seda_services_logo.jpg",
   ];
 
   const baseX = useRef(0);
