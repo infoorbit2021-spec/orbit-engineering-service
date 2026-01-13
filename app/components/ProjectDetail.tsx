@@ -47,7 +47,7 @@ export default async function ProjectDetail({ slug }: { slug: string }) {
         <div className="mx-auto relative z-10 px-6 max-w-6xl">
           <div className="flex flex-col gap-4">
             <div className="flex gap-3 items-center flex-wrap">
-              {(project.Tags || "").split(",").map((t: string) => (
+              {project.Tags && (project.Tags || "").split(",").map((t: string) => (
                 <span key={t} className="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">
                   {t.trim()}
                 </span>
