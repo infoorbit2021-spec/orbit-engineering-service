@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function HeroClient({ slides }: { slides: any[] }) {
   const [index, setIndex] = useState(0);
 
-  // Auto-slide every 5 seconds
   useEffect(() => {
     if (slides.length === 0) return;
     const timer = setInterval(() => {
@@ -25,8 +25,13 @@ export default function HeroClient({ slides }: { slides: any[] }) {
 
   const slide = slides[index];
 
+  const prev = () => setIndex((i) => (i - 1 + slides.length) % slides.length);
+  const next = () => setIndex((i) => (i + 1) % slides.length);
+
   return (
     <section className="relative text-white overflow-hidden bg-gradient-to-br from-blue-500 via-indigo-500 to-slate-500 h-[80vh] flex items-start pt-20">
+
+      {/* Background image */}
       <AnimatePresence mode="wait">
         <motion.div
           key={slide.SlideNo}
@@ -46,7 +51,24 @@ export default function HeroClient({ slides }: { slides: any[] }) {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-10 ms-5 px-4">
+      {/* LEFT arrow */}
+      <button
+        onClick={prev}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/40 hover:bg-black/70 transition"
+      >
+        <ChevronLeft className="w-6 h-6 text-white" />
+      </button>
+
+      {/* RIGHT arrow */}
+      <button
+        onClick={next}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/40 hover:bg-black/70 transition"
+      >
+        <ChevronRight className="w-6 h-6 text-white" />
+      </button>
+
+      {/* Text content */}
+      <div className="relative z-10 ml-16 md:ml-24 px-4">
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full text-sm">
             ⭐ Excellence in Engineering
@@ -58,9 +80,9 @@ export default function HeroClient({ slides }: { slides: any[] }) {
         </div>
       </div>
 
-      {/* CTA Buttons */}
-      <div className=" w-100 absolute flex flex-col md:flex-row gap-4 md:gap-6 
-                      left-1/2 md:left-auto top-1/2 md:top-[50%] transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 z-30 px-4">
+      {/* CTA */}
+      <div className="absolute flex flex-col md:flex-row gap-4 md:gap-6 
+                      left-1/2 md:left-24 top-1/2 md:top-[50%] transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 z-30 px-4">
         <a
           href="/projects"
           className="pointer-events-auto px-8 py-4 bg-white/15 border border-white/30 backdrop-blur-md hover:bg-white/25 transition-all rounded-xl shadow-lg text-white font-semibold text-center"
@@ -76,7 +98,7 @@ export default function HeroClient({ slides }: { slides: any[] }) {
       </div>
 
       {/* Dots */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 flex gap-3" style={{bottom:"15%"}}>
+      <div className="absolute left-1/2 transform -translate-x-1/2 flex gap-3" style={{ bottom: "15%" }}>
         {slides.map((_: any, i: number) => (
           <button
             key={i}
